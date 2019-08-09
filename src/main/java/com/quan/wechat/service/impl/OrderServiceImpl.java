@@ -14,6 +14,7 @@ import com.quan.wechat.enums.ResultEnum;
 import com.quan.wechat.exception.SellException;
 import com.quan.wechat.service.OrderService;
 import com.quan.wechat.service.ProductService;
+import com.quan.wechat.service.WebSocket;
 import com.quan.wechat.util.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -48,6 +49,8 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderMasterRepository orderMasterRepository;
 
+   /* @Autowired
+    private WebSocket webSocket;*/
     @Override
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
@@ -85,8 +88,9 @@ public class OrderServiceImpl implements OrderService {
             return new CartDTO(e.getProductId(), e.getProductQuantity());
         }).collect(Collectors.toList());
         productService.decreaseStock(cartDTOList);
-        //发送websocket消息
+        //todo 发送websocket消息
 
+       /* webSocket.sendMessage("---------您有新的订单啦------");*/
 
         return orderDTO;
     }

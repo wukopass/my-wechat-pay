@@ -3,6 +3,7 @@ package com.quan.wechat.entity;
 import com.quan.wechat.enums.OrderStatusEnum;
 import com.quan.wechat.enums.PayStatusEnum;
 import lombok.Data;
+import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
@@ -20,6 +21,7 @@ import java.util.List;
 @Entity
 @Data
 @DynamicUpdate
+@DynamicInsert
 public class OrderMaster {
 
     @Id

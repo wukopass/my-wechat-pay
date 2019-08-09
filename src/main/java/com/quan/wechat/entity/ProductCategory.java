@@ -1,6 +1,7 @@
 package com.quan.wechat.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
@@ -14,13 +15,16 @@ import java.util.Date;
  *
  */
 @Entity
+@DynamicInsert
 @DynamicUpdate  //动态更新时间
 @Data
 public class ProductCategory {
 
     public ProductCategory() {
     }
-
+    /**
+     * 自增字段
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
@@ -30,7 +34,6 @@ public class ProductCategory {
     private Integer categoryType;
 
     private Date createTime;
-
     private Date updateTime;
 
     public ProductCategory(String categoryName, Integer categoryType) {

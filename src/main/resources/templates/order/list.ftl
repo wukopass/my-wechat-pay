@@ -87,11 +87,11 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="myModalLabel">
-                    提醒
+                    Warning
                 </h4>
             </div>
             <div class="modal-body">
-                你有新的订单
+                   来单啦 来单啦
             </div>
             <div class="modal-footer">
                 <button onclick="javascript:document.getElementById('notice').pause()" type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -111,7 +111,7 @@
 <script>
     var websocket = null;
     if('WebSocket' in window) {
-        websocket = new WebSocket('ws://sell.natapp4.cc/sell/webSocket');
+        websocket = new WebSocket('ws://quan.natapp1.cc/sell/webSocket');
     }else {
         alert('该浏览器不支持websocket!');
     }

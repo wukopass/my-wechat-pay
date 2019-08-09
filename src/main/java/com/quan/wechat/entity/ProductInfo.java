@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.quan.wechat.enums.ProductStatusEnum;
 import com.quan.wechat.util.EnumUtil;
 import lombok.Data;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ import java.util.Date;
  */
 @Entity
 @Data
+@DynamicInsert
 public class ProductInfo {
 
 

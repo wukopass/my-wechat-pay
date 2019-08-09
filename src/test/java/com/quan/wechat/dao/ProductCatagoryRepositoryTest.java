@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -30,7 +31,9 @@ public class ProductCatagoryRepositoryTest {
     }
     @Test
     public void saveTest() {
-        ProductCategory productCategory = new ProductCategory("我的最爱", 8);
+        ProductCategory productCategory = new ProductCategory();
+        productCategory.setCategoryType(1);
+        productCategory.setCategoryName("男生最爱");
         ProductCategory result = repository.save(productCategory);
         //不期望是null
         Assert.assertNotNull(result);
